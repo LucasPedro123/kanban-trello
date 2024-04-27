@@ -5,21 +5,21 @@ export interface ILabel {
 
 export interface ITask {
   id: number;
-  completed: boolean;
   text: string;
+  completed: boolean;
 }
 
 export interface ICard {
-  id: number;
+  _id: number;
   title: string;
-  labels: ILabel[];
-  date: string;
-  tasks: ITask[];
   desc?: string;
+  date?: string;
+  labels: ILabel[];
+  tasks: ITask[];
 }
 
 export interface IBoard {
-  id: number;
+  _id: number;
   title: string;
   cards: ICard[];
 }
