@@ -29,9 +29,11 @@ function Board(props: BoardProps) {
     updateCard,
   } = props;
   const [showDropdown, setShowDropdown] = useState(false);
+
+  console.log("Board ID:", board._id); // Adiciona um log para verificar o ID do quadro
   return (
     <div className="board">
-      <div className="board-inner" key={board?.id}>
+      <div className="board-inner" key={board?._id}>
         <div className="board-header">
           <p className="board-header-title">
             {board?.title}
@@ -47,7 +49,7 @@ function Board(props: BoardProps) {
                 class="board-dropdown"
                 onClose={() => setShowDropdown(false)}
               >
-                <p onClick={() => removeBoard(board?.id)}>Delete Board</p>
+                <p onClick={() => removeBoard(board?._id)}>Delete Card</p>
               </Dropdown>
             )}
           </div>
@@ -55,9 +57,9 @@ function Board(props: BoardProps) {
         <div className="board-cards custom-scroll">
           {board?.cards?.map((item) => (
             <Card
-              key={item.id}
+              key={item._id}
               card={item}
-              boardId={board.id}
+              boardId={board._id}
               removeCard={removeCard}
               onDragEnter={onDragEnter}
               onDragEnd={onDragEnd}
@@ -65,11 +67,14 @@ function Board(props: BoardProps) {
             />
           ))}
           <CustomInput
-            text="+ Add Card"
+            text="+ Adicionar Cartão"
             placeholder="Enter Card Title"
             displayClass="board-add-card"
             editClass="board-add-card-edit"
-            onSubmit={(value: string) => addCard(board?.id, value)}
+            onSubmit={(value: string) => {
+              console.log("Board ID ao adicionar cartão:", board._id); // Use o identificador correto
+              addCard(board._id, value); // Passar board._id
+            }}
           />
         </div>
       </div>

@@ -2,11 +2,11 @@ import { IBoard } from "../Interfaces/Kanban";
 
 export const ApiMockResponse: IBoard[] = [
   {
-    id: 1651319512266.7095,
+    _id: 1651319512266.7095,
     title: "Discover",
     cards: [
       {
-        id: 1651319552926.0933,
+        _id: 1651319552926.0933,
         title: "Task1",
         labels: [{ color: "#cf61a1", text: "Urgent" }],
         date: "2022-05-05",
@@ -18,7 +18,7 @@ export const ApiMockResponse: IBoard[] = [
         desc: "Task1 Detail Description",
       },
       {
-        id: 1651319568365.593,
+        _id: 1651319568365.593,
         title: "Task2",
         labels: [{ color: "#1ebffa", text: "Frontend" }],
         date: "",
@@ -27,11 +27,11 @@ export const ApiMockResponse: IBoard[] = [
     ],
   },
   {
-    id: 1651319523126.113,
+    _id: 1651319523126.113,
     title: "Doing",
     cards: [
       {
-        id: 1651319672685.5078,
+        _id: 1651319672685.5078,
         title: "Task3",
         labels: [{ color: "#9975bd", text: "Database" }],
         date: "",
@@ -42,11 +42,11 @@ export const ApiMockResponse: IBoard[] = [
     ],
   },
   {
-    id: 1651319530017.122,
+    _id: 1651319530017.122,
     title: "In-Review",
     cards: [
       {
-        id: 1651319677070.0732,
+        _id: 1651319677070.0732,
         title: "Task4",
         labels: [{ color: "#8da377", text: "figma" }],
         date: "2022-05-06",
@@ -55,11 +55,11 @@ export const ApiMockResponse: IBoard[] = [
     ],
   },
   {
-    id: 1651319535931.4182,
+    _id: 1651319535931.4182,
     title: "Completed",
     cards: [
       {
-        id: 1651319680948.0479,
+        _id: 1651319680948.0479,
         title: "Task5",
         labels: [{ color: "#4fcc25", text: "Payment API" }],
         date: "2022-05-04",

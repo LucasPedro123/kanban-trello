@@ -1,0 +1,35 @@
+/* App.css */
+
+/* Estilos para o botão de impressão */
+.print-button {
+    background-color: #8ab36b; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão */
+    transition: 0.3s;
+    margin-bottom: 50px;
+  }
+  
+  .print-button:hover {
+    background-color:#7d9f65; /* Cor ao passar o mouse */
+  }
+  
+  /* Estilos para o SymbolPaletteComponent */
+  .symbol-palette {
+    padding-top: 50px;
+    padding-right: 30px;
+    border-right: 1px solid #ccc; /* Borda à direita */
+    background-color: #f9f9f9; /* Cor de fundo */
+  }
+  
+
+  
+  /* Estilos para o componente do diagrama */
+  .diagram {
+    flex: 1; /* Ocupa o espaço restante */
+    border: 1px solid #ccc; /* Borda ao redor */
+    background-color: white; /* Cor de fundo */
+  }
+  

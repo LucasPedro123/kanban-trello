@@ -9,10 +9,10 @@
   gap: 20px;
   
   
-  color: #17394d;
+  color: #4b4b4b;
 }
 .board-inner{
-  background-color: rgb(223 227 230 / 55%);
+  background-color: #8ab36b;
   padding: 15px;
   border-radius: 3px;
 }
@@ -52,7 +52,7 @@
 }
 
 .board-cards {
-  background-color: #f8f8f8;
+  background-color: #8ab36b;
   padding: 10px;
   border-radius: 5px;
   display: flex;

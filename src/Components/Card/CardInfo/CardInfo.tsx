@@ -19,6 +19,13 @@ function CardInfo(props: CardInfoProps) {
   const [cardValues, setCardValues] = useState<ICard>({
     ...card,
   });
+  
+  useEffect(() => {
+    if (updateCard) {
+      updateCard(boardId, cardValues._id, cardValues);
+      console.log("Card:", cardValues._id, " ", "atualizado: ", cardValues)
+    }
+  }, [cardValues]); // Atualiza sempre que cardValues mudar
 
   const updateTitle = (value: string) => {
     setCardValues({ ...cardValues, title: value });
@@ -106,7 +113,7 @@ function CardInfo(props: CardInfoProps) {
   };
 
   useEffect(() => {
-    if (updateCard) updateCard(boardId, cardValues.id, cardValues);
+    if (updateCard) updateCard(boardId, cardValues._id, cardValues);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardValues]);
 
@@ -118,7 +125,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <Type />
-            <p>Title</p>
+            <p>Título</p>
           </div>
           <CustomInput
             defaultValue={cardValues.title}
@@ -131,11 +138,11 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <List />
-            <p>Description</p>
+            <p>Descrição</p>
           </div>
           <CustomInput
             defaultValue={cardValues.desc}
-            text={cardValues.desc || "Add a Description"}
+            text={cardValues.desc || "Adicionar Descrição"}
             placeholder="Enter description"
             onSubmit={updateDesc}
           />
@@ -144,7 +151,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <Calendar />
-            <p>Date</p>
+            <p>Data</p>
           </div>
           <input
             type="date"
@@ -157,7 +164,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <Tag />
-            <p>Labels</p>
+            <p>Textos</p>
           </div>
           <div className="cardinfo-box-labels">
             {cardValues.labels?.map((item, index) => (
@@ -175,7 +182,7 @@ function CardInfo(props: CardInfoProps) {
             ))}
           </ul>
           <CustomInput
-            text="Add Label"
+            text="Adicionar Textos"
             placeholder="Enter label text"
             onSubmit={(value: string) =>
               addLabel({ color: selectedColor, text: value })
@@ -186,7 +193,7 @@ function CardInfo(props: CardInfoProps) {
         <div className="cardinfo-box">
           <div className="cardinfo-box-title">
             <CheckSquare />
-            <p>Tasks</p>
+            <p>Tarefas</p>
           </div>
           <div className="cardinfo-box-progress-bar">
             <div
@@ -213,8 +220,8 @@ function CardInfo(props: CardInfoProps) {
             ))}
           </div>
           <CustomInput
-            text={"Add a Task"}
-            placeholder="Enter task"
+            text={"Adicionar Tarefas"}
+            placeholder="Insira a Tarefa"
             onSubmit={addTask}
           />
         </div>

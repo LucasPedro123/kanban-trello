@@ -18,7 +18,7 @@ interface CardProps {
 function Card(props: CardProps) {
   const { card, boardId, removeCard, onDragEnd, onDragEnter, updateCard } =
     props;
-  const { id, title, desc, date, tasks, labels } = card;
+  const { _id, title, desc, date, tasks, labels } = card;
   const [showDropdown, setShowDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -34,10 +34,10 @@ function Card(props: CardProps) {
       )}
       <div
         className="card"
-        key={card.id}
+        key={card._id}
         draggable
-        onDragEnd={() => onDragEnd(boardId, id)}
-        onDragEnter={() => onDragEnter(boardId, id)}
+        onDragEnd={() => onDragEnd(boardId, _id)}
+        onDragEnter={() => onDragEnter(boardId, _id)}
         onClick={() => setShowModal(true)}
       >
         <div className="card-top">
@@ -59,7 +59,7 @@ function Card(props: CardProps) {
                 class="board-dropdown"
                 onClose={() => setShowDropdown(false)}
               >
-                <p onClick={() => removeCard(boardId, id)}>Delete Card</p>
+                <p onClick={() => removeCard(boardId, _id)}>Deletar Cartão</p>
               </Dropdown>
             )}
           </div>
