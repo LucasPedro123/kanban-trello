@@ -23,7 +23,7 @@
 }
 
 .custom-input-edit input {
-  border: 2px solid #0079bf;
+  border: 2px solid #8ab36b;
   border-radius: 5px;
   outline: none;
   font-size: 1rem;
@@ -40,14 +40,14 @@
   cursor: pointer;
   border-radius: 5px;
   outline: none;
-  background-color: #0079bf;
+  background-color: #8ab36b;
   color: #fff;
   border: none;
   transition: 100ms ease;
   padding: 10px;
 }
 .custom-input-edit-footer button:hover {
-  background-color: #046daa;
+  background-color: #7d9f65;
 }
 
 .custom-input-edit-footer button:active {
