@@ -1,41 +1,32 @@
-# TrelloKanban
-
-Trello Kanban Board develop on ReactJs, React Feather, Local Storage and typescript where users can Manage Tasks using Trello Kanban Board.
-
-## Demo Video
+# Trello Kanban
 
 
-
-## Demo Snapshots
+O Trello Kanban é uma aplicação inspirada no Trello que permite gerenciar tarefas e projetos usando uma interface intuitiva de kanban. O projeto é desenvolvido em React Typescript, e inclui recursos como arrastar e soltar (drag-and-drop), integração com backend, e gerenciamento de tarefas com diversas funcionalidades. Desse modo, o projeto tem por objetivo melhorar a produtividade da Daho criando sistematizações, transparência e ganho de otimização.
 
 # `Home/Dashboard Page`
 
-![alt text](screenshots/home.png)
+![alt text](screenshots/captura-de-tela-1.png)
 
 # `Task Management`
 
-![alt text](screenshots/task_manager.png)
+![alt text](screenshots/captura-de-tela-3.png)
 
-## Installation and Setup Instructions
+# `Diagram Management`
 
-Install Node Js on your machine.
+![alt text](screenshots/captura-de-tela-2..png)
 
-Install Pre-req Packages:
+## Deploy
 
-`npm install`
+`https://daho-store.vercel.app/`
 
-To Start App Server:
+<a href="https://codewithsadee.github.io/grilli/"><strong>➥ Live Demo</strong></a>
 
-`npm start`
 
-To Visit App Via Browser:
+# Funcionalidades
 
-`http://localhost:3000`
-
-# Future improvements
-
-- API or Database Integration
-- Projects Management
-- Filters and Sorting
-- User Management and Task Assignment
-- Drag and Drop Column Base instead of Card Replace
+- Funcionalidades
+- Gerenciamento de Tarefas: Crie, edite e exclua cartões de tarefas em um board kanban.
+- Arrastar e Soltar: Reorganize cartões entre diferentes boards.
+- Integração com Backend: Sincronize dados com um servidor backend.
+- Interface Intuitiva: Design responsivo e interativo.
+- Customização de Tarefas: Adicione descrições, datas, rótulos, tarefas, e outros detalhes aos cartões.
