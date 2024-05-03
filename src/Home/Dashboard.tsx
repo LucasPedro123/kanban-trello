@@ -10,6 +10,7 @@ import {
   createCard,
   updateCard,
   deleteCard,
+  updateBoard,
 } from "../Helper/APILayers"; // Removido 'updateBoard'
 
 function Dashboard() {
@@ -115,38 +116,43 @@ function Dashboard() {
   };
 
   const onDragEnd = (boardId: number, cardId: number) => {
-    if (!targetCard) return;
-
-    const sourceBoardIndex = boards.findIndex((item) => item._id === boardId);
-    if (sourceBoardIndex < 0) return;
-
+    // Este é o ID do quadro do qual o cartão foi arrastado
+    const sourceBoardId = boardId;
+    // Este é o ID do quadro para o qual o cartão foi arrastado
+    const targetBoardId = targetCard?.boardId; // `targetCard` precisa ser definida no estado
+  
+    if (!targetBoardId) return; // Se não houver quadro de destino, saia da função
+  
+    // Encontrar o índice do quadro de origem e de destino
+    const sourceBoardIndex = boards.findIndex((item) => item._id === sourceBoardId);
+    const targetBoardIndex = boards.findIndex((item) => item._id === targetBoardId);
+  
+    if (sourceBoardIndex < 0 || targetBoardIndex < 0) return; // Se não encontrou os quadros, sai
+  
+    // Encontrar o índice do cartão no quadro de origem
     const sourceCardIndex = boards[sourceBoardIndex]?.cards?.findIndex(
       (item) => item._id === cardId,
     );
-    if (sourceCardIndex < 0) return;
-
-    const targetBoardIndex = boards.findIndex(
-      (item) => item._id === targetCard.boardId,
-    );
-    if (targetBoardIndex < 0) return;
-
-    const targetCardIndex = boards[targetBoardIndex]?.cards?.findIndex(
-      (item) => item._id === targetCard.cardId,
-    );
-    if (targetCardIndex < 0) return;
-
-    const tempBoardsList = [...boards];
-    const sourceCard = tempBoardsList[sourceBoardIndex].cards[sourceCardIndex];
-    tempBoardsList[sourceBoardIndex].cards.splice(sourceCardIndex, 1);
-    tempBoardsList[targetBoardIndex].cards.splice(
-      targetCardIndex,
-      0,
-      sourceCard,
-    );
-
-    setBoards(tempBoardsList);
-
-    setTargetCard(null);
+  
+    if (sourceCardIndex < 0) return; // Se não encontrou o cartão, sai
+  
+    // Atualizar localmente para remover o cartão do quadro de origem
+    const updatedBoards = [...boards];
+    const [card] = updatedBoards[sourceBoardIndex].cards.splice(sourceCardIndex, 1);
+  
+    // Adiciona o cartão ao quadro de destino
+    updatedBoards[targetBoardIndex].cards.push(card);
+  
+    // Atualiza o estado do componente
+    setBoards(updatedBoards);
+  
+    // Enviar atualizações para o back-end
+    const updateBoardData = async () => {
+      await updateBoard(sourceBoardId, updatedBoards[sourceBoardIndex]); // Atualiza o quadro de origem
+      await updateBoard(targetBoardId, updatedBoards[targetBoardIndex]); // Atualiza o quadro de destino
+    };
+  
+    updateBoardData(); // Chama a função para enviar atualizações para o back-end
   };
 
   const onDragEnter = (boardId: number, cardId: number) => {
