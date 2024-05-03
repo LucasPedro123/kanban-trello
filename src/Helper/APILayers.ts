@@ -20,7 +20,7 @@ export class BoardAPI {
 
   async updateBoard(boardId: number, updatedBoard: IBoard): Promise<IBoard> {
     // Atualiza um board no backend
-    const response = await axios.put(`${API_BASE_URL}/boards/${boardId}/cards`, updatedBoard);
+    const response = await axios.put(`${API_BASE_URL}/boards/${boardId}`, updatedBoard);
     return response.data;
   }
 
