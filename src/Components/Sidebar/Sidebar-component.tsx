@@ -12,7 +12,7 @@ function Sidebar() {
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Kanban", src: tasksIcon, link: "" },
-    { title: "Diagrama", src: diagramIcon, link: "about" },
+    { title: "Diagrama", src: diagramIcon, link: "diagrama" },
   ];
 
   return (
