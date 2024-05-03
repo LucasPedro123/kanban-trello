@@ -3,7 +3,7 @@ import { IBoard, ICard } from "../Interfaces/Kanban";
 
 import axios from "axios"; // Biblioteca para chamadas HTTP
 
-const API_BASE_URL = "https://system-trello-register.onrender.com/api"; // Substitua pelo seu endpoint
+const API_BASE_URL = "https://system-trello-register-1.onrender.com/api"; // Substitua pelo seu endpoint
 
 export class BoardAPI {
   async fetchBoardList(): Promise<IBoard[]> {
