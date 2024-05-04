@@ -22,7 +22,7 @@ O Trello Kanban é uma aplicação inspirada no Trello que permite gerenciar tar
 <a href="https://codewithsadee.github.io/grilli/"><strong>➥ Live Demo</strong></a>
 
 
-# Funcionalidades
+# Functionalities
 
 - Gerenciamento de Tarefas: Crie, edite e exclua cartões de tarefas em um board kanban.
 - Arrastar e Soltar: Reorganize cartões entre diferentes boards.
