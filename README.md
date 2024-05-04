@@ -19,7 +19,7 @@ O Trello Kanban é uma aplicação inspirada no Trello que permite gerenciar tar
 
 `https://daho-store.vercel.app/`
 
-<a href="https://codewithsadee.github.io/grilli/"><strong>➥ Live Demo</strong></a>
+<a href="https://daho-store.vercel.app/"><strong>➥ Live Demo</strong></a>
 
 
 # Functionalities
